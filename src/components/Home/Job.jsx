@@ -13,7 +13,9 @@ export function Job(props) {
             <p>{date.getDate()} / {date.getMonth()} / {date.getFullYear()}</p>
             <p>{props.type}</p>
             <a href={removeTags(props.how_to_apply)}>Apply Here</a>
-            <div className="view-details" onClick={() => expand(props.id)}>View Details</div>
+            <div className="view-details" onClick={() => expand(props.id)}>
+                {props.detailsId === props.id ? "Hide Details" : "View Details"}
+            </div>
             <img src={props.company_logo} alt={props.title} />
 
             {props.detailsId === props.id && <div dangerouslySetInnerHTML={{ __html: props.description }} className="description" />}
