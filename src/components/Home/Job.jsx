@@ -3,8 +3,10 @@ import { ExpandContext } from "./Home"
 
 export function Job(props) {
 
+    // Converts UTC into Local Date
     const date = new Date(props.created_at)
 
+    // Context to store id of clicked job for more details
     const expand = useContext(ExpandContext)
 
     return (
